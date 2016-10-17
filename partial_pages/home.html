@@ -1,0 +1,103 @@
+﻿<div class="col-md-12">
+    <h2>{{title}}</h2>
+</div>
+<div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>2. Passing value to controllers </label>
+            <input type="text" class="form-control" ng-model="txtValue" ng-change="setValue()" />
+        </div>
+        <hr />
+        <div class="form-group">
+            <label>4. 50 Rows with filters</label>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <select class="form-control" ng-model="sortBy">
+                                <option value="None">-- Select --</option>
+                                <option value="code">Code</option>
+                                <option value="name">Name</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Filter:" ng-model="txtFilter" />
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top:50px">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Firstname</th>
+                                    <th>Lastname</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="i in data | filter: txtFilter | orderBy: sortBy">
+                                    <td>{{i.id}}</td>
+                                    <td>{{i.code}}</td>
+                                    <td>{{i.name}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>5. Telephone Formatter - it waits till length be 10 digits</label>
+            <input class="form-control" name="number" tele-formatter ng-model="question5">
+        </div>
+        <hr />
+        <div class="form-group">
+            <label>6. Currency Formatter</label>
+            <input class="form-control" type="text" ng-model="aNumber" currency-formatter />
+        </div>
+        <hr />
+        <div class="form-inline">
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label>7. </label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="number" ng-model="txt1" ng-keydown="txt1Update()" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="number" ng-model="txt2" ng-keydown="txt2Update()" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="number" ng-model="txt3" ng-keydown="txt3Update()" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">
+                <label>
+                    Result:
+                </label>
+                <input class="form-control" type="number" ng-model="txtResult" ng-keyup="txtResultUpdate()" />
+            </div>
+        </div>
+        <hr />
+        <div class="form-inline">
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label>8. Limit 5 Focus</label>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" txt-on-focus id="txtfocus1" prev-txt="" next-txt="txtfocus2" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" txt-on-focus id="txtfocus2" prev-txt="txtfocus1" next-txt="txtfocus3" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" txt-on-focus id="txtfocus3" prev-txt="txtfocus2" next-txt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

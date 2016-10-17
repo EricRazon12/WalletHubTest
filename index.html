@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="lib/css/anim-in-out.css" rel="stylesheet" />
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WalletHub</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="home({paramTwo:''})">Home</a></li>
+                <li><a ui-sref="home({paramTwo:'Red', paramThree:''})">About</a></li>
+                <li><a ui-sref="home({paramTwo:'Red', paramThree:'Hi'})">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    <ui-view style="position: absolute; width: 95%;" class="row anim-in-out anim-fade" data-anim-speed="1000" data-anim-sync="true">
+
+        <div class="my-component anim-slide-below-fade"></div>
+    </ui-view>
+    
+    
+    <script src="lib/require.js" data-main="/app/main.js"></script>
+</body>
+</html>
